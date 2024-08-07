@@ -12,8 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-
-
     // Código para o fundo animado
     const canvas = document.getElementById('background');
     const ctx = canvas.getContext('2d');
@@ -54,6 +52,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     animate();
+
+    // Função para alternar o menu dropdown no modo responsivo
+    const menuToggle = document.getElementById('menu-toggle');
+    const dropdownMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', function () {
+        if (dropdownMenu.style.display === 'flex') {
+            dropdownMenu.style.display = 'none';
+        } else {
+            dropdownMenu.style.display = 'flex';
+        }
+    });
 });
 
 // Function to scroll to the top of the page

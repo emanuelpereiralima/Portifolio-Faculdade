@@ -18,7 +18,6 @@ body {
     transform: translateX(-50%);
 }
 
-
 /* Variáveis de cores */
 :root {
     --background-color: #121212;
@@ -82,6 +81,26 @@ nav a:hover {
     background-color: #000000;
 }
 
+/* Estilo para o botão de alternância do menu */
+#menu-toggle {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#menu-toggle:hover {
+    background-color: #555;
+}
+
 /* Container para as seções flutuantes */
 .container {
     display: flex;
@@ -122,6 +141,30 @@ nav a:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
+    #nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--background-color);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #nav-menu.active {
+        display: flex;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    .line {
+        display: none; /* Esconde a linha no modo responsivo */
+    }
+
     .post-it {
         width: 100%;
     }
@@ -168,7 +211,6 @@ nav a:hover {
     color: white;
     border-radius: 5px 0 0 5px;
 }
-
 
 /* Formulário de contato */
 .form-group {
