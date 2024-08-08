@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function animate() {
         draw();
         stars.forEach(star => {
-            star.x -= Math.random();
+            star.x -= Math.random() * 0.2;
             if (star.x < 0) {
                 star.x = canvas.width;
             }
