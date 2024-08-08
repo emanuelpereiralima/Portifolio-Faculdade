@@ -22,15 +22,15 @@ body {
 :root {
     --background-color: #121212;
     --text-color: #e0e0e0;
-    --post-it-bg: #ffd700cc;
-    --post-it-hover-bg: #faf2c7cc;
+    --information-boxes-bg: #ffd700cc;
+    --information-boxes-hover-bg: #faf2c7cc;
 }
 
 body.light-mode {
     --background-color: #f4f4f4;
     --text-color: #333;
-    --post-it-bg: rgba(255, 255, 224, 0.8);
-    --post-it-hover-bg: rgba(211, 211, 211, 0.8);
+    --information-boxes-bg: rgba(255, 255, 224, 0.8);
+    --information-boxes-hover-bg: rgba(211, 211, 211, 0.8);
 }
 
 a {
@@ -109,9 +109,9 @@ nav a:hover {
     padding: 90px;
 }
 
-/* Estilo para os post-its */
-.post-it {
-    background-color: var(--post-it-bg);
+/* Estilo para os information-boxess */
+.information-boxes {
+    background-color: var(--information-boxes-bg);
     color: #333;
     padding: 20px;
     border-radius: 5px;
@@ -123,19 +123,19 @@ nav a:hover {
     animation: slide-in 1s forwards;
 }
 
-.post-it:nth-child(odd) {
+.information-boxes:nth-child(odd) {
     align-self: flex-start;
 }
 
-.post-it:nth-child(even) {
+.information-boxes:nth-child(even) {
     align-self: flex-end;
 }
 
-.post-it:hover {
-    background-color: var(--post-it-hover-bg);
+.information-boxes:hover {
+    background-color: var(--information-boxes-hover-bg);
 }
 
-.post-it h2 {
+.information-boxes h2 {
     margin-top: 0;
 }
 
@@ -165,7 +165,7 @@ nav a:hover {
         display: none; /* Esconde a linha no modo responsivo */
     }
 
-    .post-it {
+    .information-boxes {
         width: 100%;
     }
 
@@ -178,8 +178,8 @@ nav a:hover {
         padding: 15px;
     }
 
-    .post-it:nth-child(odd),
-    .post-it:nth-child(even) {
+    .information-boxes:nth-child(odd),
+    .information-boxes:nth-child(even) {
         align-self: center;
     }
 }
@@ -294,3 +294,4 @@ button:hover {
 #back-to-top:hover {
     background-color: #555;
 }
+
