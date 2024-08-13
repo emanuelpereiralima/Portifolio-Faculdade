@@ -1,22 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Função para alternar entre modos claro e escuro
+    var color = "white"
     window.toggleMode = function () {
         document.body.classList.toggle('light-mode');
         const modeIcon = document.getElementById('mode-icon');
         if (document.body.classList.contains('light-mode')) {
             modeIcon.textContent = '☾';
-            String = 'black';
+            color = "black";
         } else {
             modeIcon.textContent = '☼';
-            String = 'white';
+            color = "white";
         }
+    };
+
+    // Função para alternar o idioma do site
+    window.toggleLanguage = function () {
+        const elements = document.querySelectorAll('[data-en]');
+        elements.forEach(el => {
+            const enText = el.getAttribute('data-en');
+            if (el.textContent === enText) {
+                el.textContent = el.getAttribute('data-pt');
+            } else {
+                el.setAttribute('data-pt', el.textContent);
+                el.textContent = enText;
+            }
+        });
     };
 
     // Código para o fundo animado
     const canvas = document.getElementById('background');
     const ctx = canvas.getContext('2d');
-    var String = 'white';
-
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
@@ -32,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = String;
+        ctx.fillStyle = color;
         stars.forEach(star => {
             ctx.beginPath();
             ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -43,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function animate() {
         draw();
         stars.forEach(star => {
-            star.x -= Math.random() * 0.2;
+            star.x -= Math.random();
             if (star.x < 0) {
                 star.x = canvas.width;
             }

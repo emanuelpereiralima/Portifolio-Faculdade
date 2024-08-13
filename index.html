@@ -9,96 +9,48 @@
 <body>
     <header>
         <h1>Emanuel Pereira</h1>
-        <p>Criador ( Artista / Designer / Desenvolvedor )</p>
+        <p data-en="Creator ( Artist / Designer / Developer )" id="sub-title">Criador ( Artista / Designer / Desenvolvedor )</p>
         <button id="toggle-mode" onclick="toggleMode()">
             <span id="mode-icon">☼</span>
-        </button>        
+        </button>
+        <button id="toggle-lang" onclick="toggleLanguage()">EN/PT</button>
     </header>
     <button id="menu-toggle">☰</button>
     <nav id="nav-menu">
         <!-- Links para navegação -->
-        <a href="#sobre">Sobre mim</a>
-        <a href="#educacao">Formação</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#redes">Redes Sociais</a>
-        <a href="#contato">Contato</a>
+        <a href="#sobre" data-en="About Me">Sobre mim</a>
+        <a href="#educacao" data-en="Education">Formação</a>
+        <a href="#portfolio" data-en="Portfolio">Portfólio</a>
+        <a href="#redes" data-en="Social Media">Redes Sociais</a>
+        <a href="#contato" data-en="Contact">Contato</a>
     </nav>
     <div class="line"></div>
     <div class="container">
-        <section id="sobre" class="information-boxes">
-            <h2>Sobre mim</h2>
-            <p>Sou um criador de jogos, filtros pra redes sociais, programas, vídeos, dentre tantas outras coisas e não pretendo parar apenas com o conhecimento que já tenho sobre criação, já que me vejo construindo sonhos, projetos, soluções, entretenimento e trazendo à vida o que antes só habitava o mundo das ideias. Acredito que isso que me mova hoje a continuar aprendendo e buscando cada dia me tornar mais criativo e que esse conhecimento possa ser propagado por onde eu passar.</p>
+        <section id="sobre" class="information-box">
+            <h2 data-en="About Me">Sobre mim</h2>
+            <p data-en="I am a creator of games, filters for social networks, programs, videos, among many other things, and I do not intend to stop with the knowledge I already have about creation, as I see myself building dreams, projects, solutions, entertainment, and bringing to life what once only inhabited the world of ideas. I believe this is what drives me today to continue learning and seeking to become more creative each day, so that this knowledge can be propagated wherever I go.">
+                Sou um criador de jogos, filtros pra redes sociais, programas, vídeos, dentre tantas outras coisas e não pretendo parar apenas com o conhecimento que já tenho sobre criação, já que me vejo construindo sonhos, projetos, soluções, entretenimento e trazendo à vida o que antes só habitava o mundo das ideias. Acredito que isso que me mova hoje a continuar aprendendo e buscando cada dia me tornar mais criativo e que esse conhecimento possa ser propagado por onde eu passar.
+            </p>
         </section>
-        <section id="educacao" class="information-boxes">
-            <h2>Formação</h2>
-            <h3>Análise e Desenvolvimento de Sistemas - UNINTER</h3>
-            <p>2023 - 2025</p>
-            <h3>Estágio de Desenvolvimento de Software - Accenture</h3>
-            <p>2021 - 2023</p>
-            <h3>Curso de criação de jogos - Saga Art School <a href="https://www.saga.com.br/cursos/criacao-de-jogos" target="_blank">PlayGame</a></h3>
-            <p>2019 - 2021</p>
-            <h3>Técnico de Programação de jogos digitais - ETECD</h3>
-            <p>2012 - 2014</p>
+        <section id="educacao" class="information-box">
+            <h2 data-en="Education">Formação</h2>
+            <ul>
+                <p>2023 - 2025</p>
+                <li>Análise e Desenvolvimento de Sistemas - UNINTER</li>
+                <p>2019 - 2021</p>
+                <li>Curso de cbrriação de jogos - Saga Art School <a href="https://www.saga.com.br/cursos/criacao-de-jogos" target="_blank">PlayGame</a></li>
+                <p>2012 - 2014</p>
+                <li>Técnico de Programação de jogos digitais - ETECD</li>
+            </ul>
         </section>
-        <section id="skills" class="information-boxes">
-            <h2>Habilidades</h2>
-            <div class="skill">
-                <p>HTML</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 70%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>CSS</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 70%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>JavaScript</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 70%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>Modelagem 3D (Blender / Maya)</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 50%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>Desenvolvimento de Jogos (Unity / Godot)</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 75%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>Python</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 60%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>C#</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 75%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>Inglês</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 85%;"></div>
-                </div>
-            </div>
-            <div class="skill">
-                <p>Libras</p>
-                <div class="skill-bar">
-                    <div class="skill-level" style="width: 50%;"></div>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio" class="information-boxes">
-            <h2>Portfólio</h2>
+    </section>
+    <section id="educacao" class="information-box">
+        <h2 data-en="Professional Experience">Experiência Profissional</h2>
+        <h3>Estágio de Desenvolvimento de Software - Accenture</h3>
+        <p>2021 - 2023</p>
+    </section>
+        <section id="portfolio" class="information-box">
+            <h2 data-en="Portfolio">Portfólio</h2>
             <ul>
                 <li><a href="https://bit.ly/jogueecos" target="_blank">Live Game</a></li>
                 <li><a href="https://sketchfab.com/manopereira" target="_blank">Projetos em 3D</a></li>
@@ -108,8 +60,8 @@
                 <li><a href="https://replit.com/@manopereira" target="_blank">Códigos</a></li>
             </ul>
         </section>
-        <section id="redes" class="information-boxes">
-            <h2>Redes</h2>
+        <section id="redes" class="information-box">
+            <h2 data-en="Social Media">Redes Sociais</h2>
             <ul>
                 <li><a href="https://www.linkedin.com/in/emanuel-pereira/" target="_blank">Linkedin</a></li>
                 <li><a href="https://instagram.com/manopereira" target="_blank">Instagram</a></li>
@@ -117,22 +69,22 @@
                 <li><a href="https://github.com/emanuelpereiralima" target="_blank">Github</a></li>
             </ul>
         </section>
-        <section id="contato" class="information-boxes">
-            <h2>Contato</h2>
+        <section id="contato" class="information-box">
+            <h2 data-en="Contact">Contato</h2>
             <form>
                 <div class="form-group">
-                    <label for="name">Nome:</label>
+                    <label for="name" data-en="Name">Nome:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email" data-en="Email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Mensagem:</label>
+                    <label for="message" data-en="Message">Mensagem:</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
-                <button type="submit">Enviar</button>
+                <button type="submit" data-en="Send">Enviar</button>
             </form>
         </section>
     </div>
