@@ -7,7 +7,14 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     transition: background-color 0.5s, color 0.5s;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    scroll-behavior: smooth;
 }
+
 ul {
     font-size: 16px;
     font-family: Arial;
@@ -29,7 +36,7 @@ ul a:hover {
 
 
 .line {
-    height: 350%;
+    height: 300%;
     width: 2px;
     background-color: var(--text-color);
     position: absolute;
@@ -91,13 +98,20 @@ nav a:hover {
     right: 10px;
     background-color: #000000;
     border: none;
+    width: 50px;
+    height: 50px;
     font-size: 24px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
 
 #toggle-mode:hover {
-    background-color: #000000;
+    background-color: #555555;
 }
+
 
 /* Estilo para o botão de alternância do menu */
 #menu-toggle {
@@ -121,10 +135,13 @@ nav a:hover {
 
 /* Container para as seções flutuantes */
 .container {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px;
 }
 
 /* Estilo para as information-boxes */
@@ -145,33 +162,39 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.5s ease, background-color 0.5s ease;
+    max-width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .information-box:nth-child(1n) {
     align-self: flex-start;
-    background-color: var(--planet-color-1);
+    background: radial-gradient(circle, rgba(255,223,0,0.9), rgba(255,215,0,0.6), rgba(240,230,140,0.2));
 }
 
 .information-box:nth-child(2n) {
     align-self: flex-end;
-    background-color: var(--planet-color-2);
+    background: radial-gradient(circle, rgba(255,69,0,0.9), rgba(255,99,71,0.6), rgba(255,165,0,0.2));
 }
 
 .information-box:nth-child(3n) {
-    background-color: var(--planet-color-3);
+    background: radial-gradient(circle, rgba(70,130,180,0.9), rgba(100,149,237,0.6), rgba(173,216,230,0.2));
 }
 
 .information-box:nth-child(4n) {
-    background-color: var(--planet-color-4);
+    background: radial-gradient(circle, rgba(138,43,226,0.9), rgba(148,0,211,0.6), rgba(186,85,211,0.2));
 }
 
 .information-box:nth-child(5n) {
-    background-color: var(--planet-color-5);
+    background: radial-gradient(circle, rgba(255,99,71,0.9), rgba(250,128,114,0.6), rgba(233,150,122,0.2));
 }
 
 .information-box:nth-child(6n) {
-    background-color: var(--planet-color-6);
+    background: radial-gradient(circle, rgba(71,255,117,0.9), rgba(127,255,212,0.6), rgba(152,251,152,0.2));
 }
 
 .information-box h2 {
@@ -180,6 +203,23 @@ nav a:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
+
+    body {
+        display: block;
+    }
+
+    .container {
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     #nav-menu {
         display: none;
         flex-direction: column;
@@ -202,13 +242,7 @@ nav a:hover {
 
     .line {
         display: none; /* Esconde a linha no modo responsivo */
-    }
-
-    .information-box {
-        width: 100%;
-        height: auto;
-        border-radius: 20px; /* Ajuste para dispositivos móveis */
-    }
+    }   
 
     nav a {
         display: block;
@@ -217,6 +251,11 @@ nav a:hover {
 
     section {
         padding: 15px;
+    }
+
+    .information-box {
+        width: 90%;
+        margin: 20px auto;
     }
 
     .information-box:nth-child(odd),
@@ -314,4 +353,47 @@ button:hover {
 
 #back-to-top:hover {
     background-color: #555;
+}
+
+/* Adiciona a animação do círculo */
+@keyframes expandCircle {
+    from {
+        width: 0;
+        height: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+    to {
+        width: 300vw; /* Ajuste o tamanho conforme necessário */
+        height: 300vh; /* Ajuste o tamanho conforme necessário */
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+}
+
+.circle-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0;
+    transform: translate(-50%, -50%); /* Centraliza o círculo */
+}
+
+.circle-overlay.active {
+    animation: expandCircle 1s forwards;
+}
+
+html {
+    scroll-behavior: smooth;
 }

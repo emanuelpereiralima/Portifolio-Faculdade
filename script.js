@@ -1,16 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Função para alternar entre modos claro e escuro
-    var color = "white"
+    var color = "white";
     window.toggleMode = function () {
         document.body.classList.toggle('light-mode');
         const modeIcon = document.getElementById('mode-icon');
+        const circleOverlay = document.getElementById('circle-overlay');
+
         if (document.body.classList.contains('light-mode')) {
             modeIcon.textContent = '☾';
             color = "black";
+            circleOverlay.style.backgroundColor = "#f4f4f4"; // Cor do fundo claro
         } else {
             modeIcon.textContent = '☼';
             color = "white";
+            circleOverlay.style.backgroundColor = "#121212"; // Cor do fundo escuro
         }
+
+        // Ativa a animação
+        circleOverlay.classList.add('active');
+
+        // Remove a classe após a animação para permitir repetir a animação
+        setTimeout(() => {
+            circleOverlay.classList.remove('active');
+        }, 500); // O tempo deve corresponder à duração da animação
     };
 
     // Função para alternar o idioma do site
@@ -76,6 +88,20 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             dropdownMenu.style.display = 'flex';
         }
+    });
+
+    // Adiciona rolagem suave ao clicar nos itens do menu
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
     });
 });
 
