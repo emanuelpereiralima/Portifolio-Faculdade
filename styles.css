@@ -366,8 +366,8 @@ button:hover {
         opacity: 1;
     }
     to {
-        width: 300vw; /* Ajuste o tamanho conforme necessário */
-        height: 300vh; /* Ajuste o tamanho conforme necessário */
+        width: 300vw;
+        height: 300vh;
         top: 0;
         left: 0;
         transform: translate(0, 0);
